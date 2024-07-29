@@ -1,0 +1,8 @@
+def even_elements(input_list):
+    even_list = [x for x in input_list if x % 2 == 0]
+    return even_list
+
+a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+
+print(even_elements(a))
