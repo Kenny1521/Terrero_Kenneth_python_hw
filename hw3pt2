@@ -1,0 +1,18 @@
+def remove_duplicates(lst):
+    return list(set(lst))
+
+def test_remove_duplicates():
+    test_cases = [
+        ([1, 2, 3, 1, 2, 3], [1, 2, 3]),
+        ([1, 1, 1, 1, 1], [1]),
+        ([5, 4, 3, 2, 1], [1, 2, 3, 4, 5]),
+        ([], []),
+        ([2, 2, 2, 2, 2, 2], [2])
+    ]
+
+    for i, (input_list, expected) in enumerate(test_cases):
+        result = remove_duplicates(input_list)
+        assert sorted(result) == sorted(expected), f"Test case {i+1} failed: expected {expected}, got {result}"
+    print("All test cases for remove_duplicates passed!")
+
+test_remove_duplicates()
