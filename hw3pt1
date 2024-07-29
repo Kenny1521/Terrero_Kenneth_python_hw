@@ -1,0 +1,24 @@
+def find_max(lst):
+    if not lst:
+        return None
+    max_value = lst[0]
+    for num in lst:
+        if num > max_value:
+            max_value = num
+    return max_value
+
+def test_find_max():
+    test_cases = [
+        ([1, 2, 3, 4, 5], 5),
+        ([-1, -2, -3, -4, -5], -1),
+        ([100], 100),
+        ([], None),
+        ([5, 3, 5, 2, 5], 5)
+    ]
+
+    for i, (input_list, expected) in enumerate(test_cases):
+        result = find_max(input_list)
+        assert result == expected, f"Test case {i+1} failed: expected {expected}, got {result}"
+    print("All test cases for find_max passed!")
+
+test_find_max()
