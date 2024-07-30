@@ -1,0 +1,14 @@
+import re
+
+def validate_passwords(passwords):
+    def is_valid(password):
+        return (6 <= len(password) <= 12 and
+                re.search("[a-z]", password) and
+                re.search("[A-Z]", password) and
+                re.search("[0-9]", password) and
+                re.search("[$#@]", password))
+    
+    valid_passwords = [password for password in passwords.split(',') if is_valid(password)]
+    return ",".join(valid_passwords)
+
+
