@@ -1,0 +1,13 @@
+def count_letters_digits(sentence):
+    letters = 0
+    digits = 0
+    for char in sentence:
+        if char.isalpha():
+            letters += 1
+        elif char.isdigit():
+            digits += 1
+    return letters, digits
+
+
+print(count_letters_digits("hey man 2"))  # Output: (6, 1)
+
